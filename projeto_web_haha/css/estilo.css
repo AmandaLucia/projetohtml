@@ -1,0 +1,49 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    align-items: center;
+    background-color: black !important;
+}
+.cadastro-box{
+    align-items: center;
+    width: 50%;
+    position: relative;
+    transform: translate(50%, 50px);
+    color: white;
+}
+.cadastro-box h1{
+    float: left;
+    font-size: 40px;
+    border-bottom:  6px solid white; 
+    margin-bottom: 50px;
+    padding: 10px 0;
+
+}
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 28px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 2px solid white;
+}
+.textbox i{
+    float: left;
+    text-align: center;
+    color: white;
+}
+.textbox input{
+    border: none !important;
+    outline: none !important;
+    background: none !important;
+    color: white !important;
+    width: 70%;
+    float: left;
+    margin: 0 10px;
+
+}
+.btn{
+    width: 50%;
+}

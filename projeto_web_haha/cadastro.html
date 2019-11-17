@@ -9,64 +9,101 @@
 	<link rel="icon" href="img/escudo.jpg">
 	
 	<!-- PRECISA USAR ESSAS CDN PARA FUNCIONAMENTO DO JAVASCRIPT COMPILADO -->
-	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     
     <title>The Avengers</title>
-	<!--Bootstrap JS -->
-	<!--<script type="text/javascript" src="js/bootstrap.js"> </script>
-	<script type="text/javascript" src="js/validacpf.js"> </script>-->
+	<!--Funcoes JS -->
 	<script type="text/javascript" src="js/funcoes.js">	</script>
 	
 	
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 	
-	
+	<!--Estilo CSS-->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
     <title>The Avengers</title>
   </head>
   <body>
-    <form name="formCadastro" method="post" action="exemplo.php" onsubmit="return validacao()">
-		<div class="form-group" style="left:10px; width:500px">
-			<label for="exampleFormControlInput1">Nome e sobrenome:</label>
-			<input type="text" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="DIGITE SEU NOME E SOBRENOME">
-		</div>
-		<div class="form-group" style="left:10px; width:500px">
-			<label for="exampleInputEmail1">CPF:</label>
-				<input type="number" name="strCPF" class="form-control" id="exampleInputCpf" aria-describedby="cpfHelp" maxlength="11" placeholder="SEM PONTOS E BARRA">
-				<small id="cpfHelp" class="form-text text-muted" >Nunca vamos compartilhar seu CPF com ninguém.</small>
-			<!--<input type="text" name="strCPF">
-			<input type="button" onclick="TestaCPF(strCPF.value)" value="Verificar o CPF">
-		</div>-->
-		</div>
-		<div class="form-group" style="left:10px; width:500px">
-			<label for="exampleFormControlInput1">Endereço de email:</label>
-			<input type="email" name="email" class="form-control" id="exampleFormControlInput2" placeholder="NOME@EXEMPLO.COM.BR">
-		</div>
-		<div class="form-group" style="left:10px; width:500px">
-			<label for="exampleFormControlSelect1">De qual produção você mais gostou:</label>
-			<select class="form-control" id="exampleFormControlSelect1">
-				<option>Os Vingadores - The Avengers (2012)</option>
-				<option>Vingadores - Era de Ultron (2015)</option>
-				<option>Vingadores - Guerra Infinita (2018)</option>
-				<option>Vingadores - Ultimato (2019)</option>
-			</select>
-		</div>
-		
-		<div class="form-group" style="width:500px;">
-			<label for="exampleFormControlTextarea1">Deixe seu comentário:</label>
-			<textarea name="comentario" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-		</div>
-		<input type="submit" name="cadastrar "value="Cadastrar">
-		<input type="reset"  value="Limpar informações" >
+    <form id='formCadastro' name="formCadastro" method="post" action="#" onsubmit="return validacaocpf(receberCpf.value)">
+		<div class="cadastro-box">
+			<h1>Faça o cadastro e receba informações oficiais atualizadas.</h1>
+			<div class="textbox">
+				<i class="fa fa-address-book" aria-hidden="true"></i>
+				<div class="row">
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberNome" required="required" id="receberNome" placeholder="Nome">
+					</div>
+				<i class="fa fa-address-book-o" aria-hidden="true"></i>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberSobrenome" required="required" id="receberSobrenome" placeholder="Sobrenome">
+					</div>
+				</div>
+			</div>
+			<div class="textbox">
+				<i class="fa fa-id-card" aria-hidden="true"></i>
+				<div class="row">
+					<div class="col-md-5">
+							<input type="text" class="form-control" name="receberCpf" required="required" id="receberCpf" maxlength="11" placeholder="CPF">
+					</div>
+				<i class="fa fa-id-card-o" aria-hidden="true"></i>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberRg" required="required" id="receberRg" placeholder="RG">
+					</div>
+				</div>
+			</div>
+			<div class="textbox">
+			<i class="fa fa-envelope" aria-hidden="true"></i>
+				<div class="row">
+					<div class="col-md-5">
+						<input type="email" class="form-control" name="receberEmail" required="required" id="receberEmail" placeholder="Email">
+					</div>
+			<i class="fa fa-lock" aria-hidden="true"></i>
+					<div class="col-md-5">
+						<input type="password" class="form-control" name="receberSenha" required="required" id="receberSenha" placeholder="Senha">
+					</div>
+				</div>
+			</div>
+			<div class="textbox">
+			<i class="fa fa-map-marker" aria-hidden="true"></i>
+				<div class="row">
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberCep" required="required" id="receberCep" pattern= "\d{5}-?\d{3}" maxlength="8" placeholder="CEP">
+					</div>
+			<i class="fa fa-home" aria-hidden="true"></i>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberEndereco" required="required" id="receberEndereco" placeholder="Endereço">
+					</div>
+				</div>
+			</div>
+			<div class="textbox">
+			<i class="fa fa-location-arrow" aria-hidden="true"></i>
+				<div class="row">
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberEstado" required="required" id="receberEstado" placeholder="Estado">
+					</div>
+			<i class="fa fa-thumb-tack" aria-hidden="true"></i>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberCidade" required="required" id="receberCidade" placeholder="Cidade">
+					</div>
+				</div>
+			</div>
+			<div class="textbox">
+				<label for="receberEscolha">De qual produção você mais gostou:</label>
+				<select class="form-control" id="receberEscolha">
+					<option>Os Vingadores - The Avengers (2012)</option>
+					<option>Vingadores - Era de Ultron (2015)</option>
+					<option>Vingadores - Guerra Infinita (2018)</option>
+					<option>Vingadores - Ultimato (2019)</option>
+				</select>
+			</div>
+			<div class="textbox">
+				<label for="receberComentario">Deixe seu comentário:</label>
+				<textarea name="receberComentario" class="form-control" id="receberComentario" rows="3"></textarea>
+			</div>
+			<br>
+			<input class="btn btn-primary" type="submit" value="Cadastrar"><br><br><br>
 	</form>
-		<br>
-	<p align="center">
-		Sejam todos bem-vindos ao nosso mundo.
-		<br>
-		<br>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.3622998414053!2d-46.59859188502303!3d-23.519468184703666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce58cbc5bfbf33%3A0xabc0b13f35ba14cf!2sETEC%20Professor%20Hor%C3%A1cio%20Augusto%20da%20Silveira!5e0!3m2!1spt-BR!2sbr!4v1572724966448!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-	</p>
   </body>
 </html>

@@ -1,31 +1,21 @@
-function validacao(){
-	
-	var nome = formCadastro.nome.value;
-	var cpf = formCadastro.strCPF.value;
-	var email = formCadastro.email.value;
-	var comentario = formCadastro.comentario.value;
-  	
-//---------------------------------------------------------------------------------------verifica nome	
-	if (nome == ""){
-		alert("Preencha o nome completo");
-		formCadastro.nome.focus();
-		return false;
-	}	
-		
+/*!
+ * jQuery Validation Plugin v1.13.1
+ *
+ * http://jqueryvalidation.org/
+ *
+ * Copyright (c) 2014 Jörn Zaefferer
+ * Released under the MIT license
+ */
+ 
+ //validação de CPF
 //---------------------------------------------------------------------------------------verifica cpf
 	//Link para validar CPF: https://www.devmedia.com.br/validar-cpf-com-javascript/23916
-	
+	function validacaocpf(receberCpf){
+	var cpf = receberCpf;
 	var Soma;
     var Resto;
     Soma = 0;
 	resultadoInvalido = "";	
-	
-	if (cpf == ""){
-		alert("Favor preencher o campo CPF");
-		resultadoInvalido = "invalido";
-		return false;
-		formCadastro.strCPF.focus();
-	}
 	
 	if (cpf == "00000000000" || 
 		cpf == "11111111111" || 
@@ -38,7 +28,7 @@ function validacao(){
 		cpf == "88888888888" || 
 		cpf == "99999999999")//return false;
 	{
-		alert("CPF é inválido, pois está preenchido com " + cpf);
+		alert("O CPF é inválido, pois está preenchido com " + cpf);
 		resultadoInvalido = "inválido";
 		return false;
 	}
@@ -79,26 +69,6 @@ function validacao(){
     {
 		alert("O número do CPF é inválido");
 		resultadoInvalido = "inválido";
-		return false;
-	}
-	/*if (resultadoInvalido != "inválido")
-	{
-		alert("O número do CPF é VÁLIDO");//return true;
-	}*/
-	//var strCPF = "12345678909";
-	//alert(TestaCPF(strCPF));
-
-//---------------------------------------------------------------------------------------verifica e-mail	
-	if(email == "" || email.indexOf('@') == -1 ){
-		alert("Campo e-mail invalido, digite seu e-mail corretamente");
-		formCadastro.email.focus();
-		return false;
-	}
-
-//---------------------------------------------------------------------------------------verifica comentario	
-	if (comentario.length < 5){
-		alert("Digite pelo menos 5 caracteres");
-		formCadastro.comentario.focus();
 		return false;
 	}
 }
