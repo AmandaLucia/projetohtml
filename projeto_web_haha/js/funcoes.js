@@ -72,3 +72,32 @@
 		return false;
 	}
 }
+
+//validação de CEP
+
+$(document).ready(function(){
+	$("#srtCep").focusout(function(){
+		var cep = $("#srtCep").val();
+		cep = cep.replace("-","");
+
+		var receberUrl = "https://viacep.com.br/ws/"+ cep +"/json";
+		
+		$.ajax({
+			url : receberUrl,
+			type : "get",
+			dataType : "json",
+			success : function(data){
+				console.log(data);
+
+				$("#srtCidade").val (data.localidade);
+				$("#srtEstado").val (data.uf);
+				$("#srtEndereco").val (data.logradouro);
+				$("#srtBairro").val (data.bairro);
+			},
+			error : function(erro){
+				console.log(erro);
+			}
+			
+		})
+	})
+})

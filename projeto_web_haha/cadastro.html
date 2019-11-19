@@ -7,13 +7,11 @@
 
     <!-- ÍCONE DO ESCUDO NA ABA DA GUIA -->
 	<link rel="icon" href="img/escudo.jpg">
-	
-	<!-- PRECISA USAR ESSAS CDN PARA FUNCIONAMENTO DO JAVASCRIPT COMPILADO -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-    <title>The Avengers</title>
-	<!--Funcoes JS -->
+
+	<title>The Avengers</title>
+	<!--Funcoes JS-->
+	<!--CDN de licenciamento em (arquivo) jquery.js-->
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/funcoes.js">	</script>
 	
 	
@@ -23,6 +21,7 @@
 	<!--Estilo CSS-->
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
+	<!--Somente as propriedades "Class" e "Plaseholder" podem ser alteradas dentro do input de cada caixa de texto-->
     <title>The Avengers</title>
   </head>
   <body>
@@ -33,11 +32,11 @@
 				<i class="fa fa-address-book" aria-hidden="true"></i>
 				<div class="row">
 					<div class="col-md-5">
-						<input type="text" class="form-control" name="receberNome" required="required" id="receberNome" placeholder="Nome">
+						<input type="text" class="form-control" name="receberNome" required="required" id="srtNome" placeholder="Nome">
 					</div>
 				<i class="fa fa-address-book-o" aria-hidden="true"></i>
 					<div class="col-md-5">
-						<input type="text" class="form-control" name="receberSobrenome" required="required" id="receberSobrenome" placeholder="Sobrenome">
+						<input type="text" class="form-control" name="receberSobrenome" required="required" id="srtSobrenome" placeholder="Sobrenome">
 					</div>
 				</div>
 			</div>
@@ -45,11 +44,11 @@
 				<i class="fa fa-id-card" aria-hidden="true"></i>
 				<div class="row">
 					<div class="col-md-5">
-							<input type="text" class="form-control" name="receberCpf" required="required" id="receberCpf" maxlength="11" placeholder="CPF">
+							<input type="text" class="form-control" name="receberCpf" required="required" id="srtCpf" maxlength="11" placeholder="CPF">
 					</div>
 				<i class="fa fa-id-card-o" aria-hidden="true"></i>
 					<div class="col-md-5">
-						<input type="text" class="form-control" name="receberRg" required="required" id="receberRg" placeholder="RG">
+						<input type="text" class="form-control" name="receberRg" required="required" id="srtRg" placeholder="RG">
 					</div>
 				</div>
 			</div>
@@ -57,11 +56,11 @@
 			<i class="fa fa-envelope" aria-hidden="true"></i>
 				<div class="row">
 					<div class="col-md-5">
-						<input type="email" class="form-control" name="receberEmail" required="required" id="receberEmail" placeholder="Email">
+						<input type="email" class="form-control" name="receberEmail" required="required" id="srtEmail" placeholder="Email">
 					</div>
 			<i class="fa fa-lock" aria-hidden="true"></i>
 					<div class="col-md-5">
-						<input type="password" class="form-control" name="receberSenha" required="required" id="receberSenha" placeholder="Senha">
+						<input type="password" class="form-control" name="receberSenha" required="required" id="srtSenha" placeholder="Senha">
 					</div>
 				</div>
 			</div>
@@ -69,23 +68,35 @@
 			<i class="fa fa-map-marker" aria-hidden="true"></i>
 				<div class="row">
 					<div class="col-md-5">
-						<input type="text" class="form-control" name="receberCep" required="required" id="receberCep" pattern= "\d{5}-?\d{3}" maxlength="8" placeholder="CEP">
+						<input type="text" class="form-control" name="receberCep" required="required" id="srtCep" pattern= "\d{5}-?\d{3}" maxlength="8" placeholder="CEP">
 					</div>
 			<i class="fa fa-home" aria-hidden="true"></i>
 					<div class="col-md-5">
-						<input type="text" class="form-control" name="receberEndereco" required="required" id="receberEndereco" placeholder="Endereço">
+						<input type="text" class="form-control" name="receberEndereco" required="required" id="srtEndereco" placeholder="Endereço">
 					</div>
 				</div>
 			</div>
 			<div class="textbox">
-			<i class="fa fa-location-arrow" aria-hidden="true"></i>
+			<i class="" aria-hidden="true"></i>
 				<div class="row">
 					<div class="col-md-5">
-						<input type="text" class="form-control" name="receberEstado" required="required" id="receberEstado" placeholder="Estado">
+						<input type="text" class="form-control" name="receberBairro" required="required" id="srtBairro" placeholder="Bairro">
 					</div>
-			<i class="fa fa-thumb-tack" aria-hidden="true"></i>
+			<i class="" aria-hidden="true"></i>
 					<div class="col-md-5">
-						<input type="text" class="form-control" name="receberCidade" required="required" id="receberCidade" placeholder="Cidade">
+						<input type="number" class="form-control" name="receberNumero" required="required" id="srtNumero" placeholder="#" maxlength="4">
+					</div>
+				</div>
+			</div>
+			<div class="textbox">
+			<i class="fa fa-thumb-tack" aria-hidden="true"></i>
+				<div class="row">
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberCidade" required="required" id="srtCidade" placeholder="Cidade">
+					</div>
+			<i class="fa fa-location-arrow" aria-hidden="true"></i>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="receberEstado" required="required" id="srtEstado" placeholder="Estado">
 					</div>
 				</div>
 			</div>
